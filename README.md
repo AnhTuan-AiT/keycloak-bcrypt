@@ -5,7 +5,7 @@ project [OpenERP](https://github.com/dungkhmt/openerp).
 
 ## Build JAR
 
-Change version of Keycloak if needed and run:
+Change version of Keycloak in file `gradle.properties` if needed and run:
 
 ```bash
 ./gradlew assemble
