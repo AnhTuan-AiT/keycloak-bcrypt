@@ -5,8 +5,6 @@ import org.keycloak.credential.hash.PasswordHashProvider;
 import org.keycloak.models.PasswordPolicy;
 import org.keycloak.models.credential.PasswordCredentialModel;
 
-import java.util.Base64;
-
 /**
  * @author <a href="mailto:pro.guillaume.leroy@gmail.com">Guillaume Leroy</a>
  */
@@ -38,7 +36,7 @@ public class BCryptPasswordHashProvider implements PasswordHashProvider {
     @Override
     public String encode(final String rawPassword, final int iterations) {
         final int cost = iterations == -1 ? defaultIterations : iterations;
-        return BCrypt.with(BCrypt.Version.VERSION_2Y).hashToString(cost, rawPassword.toCharArray());
+        return BCrypt.with(BCrypt.Version.VERSION_2A).hashToString(cost, rawPassword.toCharArray());
     }
 
     @Override
